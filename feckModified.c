@@ -18,16 +18,20 @@ int main(){
    char *evil = "Invalid password, get out of here!\n";
    char name[16], pw[16]; /* 16 characters for username & password */
 
-      
+
    printf("Enter a message (1024 characters): ");
    fgets(msg, 1024, stdin);
-   
+
    printf("User: "); gets(name);
    printf("Password: "); gets(pw);
-   if( match(name,pw) == 0 )
+
+   if( match(name,pw) == 0 ) {
       welcome(good);
-   else
+   }
+   else {
       goodbye(evil);
+   }
+
    printf("Your message is: %s\n", msg);
    fprintf(stderr, "%p", &pw);
 
