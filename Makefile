@@ -1,9 +1,9 @@
-all: main modified shellcode
+all: main printAddresses shellcode
 
-modified: feckModified.c
-	gcc -g -zexecstack -fno-stack-protector -o modified feckModified.c
+printAddresses: feckPrintAddresses.c
+	gcc -g -zexecstack -fno-stack-protector -o printAddresses feckPrintAddresses.c
 
-shellocde: shellcode.o
+shellcode: shellcode.o
 	ld shellcode.o -o shellcode
 
 shellcode.o: shellcode.s
