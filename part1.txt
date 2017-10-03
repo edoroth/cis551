@@ -1,0 +1,7 @@
+Description of security problems:
+
+The most clear problem with this program is the use of the "gets" function to read in input from the user. Unlike alternatives like "fgets", the "gets" function does not set a limit on the number of characters that can be read into the specified buffer. Thus, the user may enter as many characters as they wish, and in particular could exceed the limits of the variable specified as a buffer. Once this buffer has been overflown, the remaining characters will be written into the subsequent addresses in memory, and so existing memory locations may be modified in disastrous ways. This may allow the hacker to even reach the return address and change the control flow of the program in nefarious ways. 
+
+There are a few different features that may prevent this exploitation -- one is ASLR (address-space layout randomization), which randomizes the address locations so that hackers are unable to overflow the buffer and predict exactly what they are able to modify (at least not with very significant probability).
+
+

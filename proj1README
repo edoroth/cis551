@@ -1,0 +1,15 @@
+There are 5 parts to this assignment. All work was completed by Edo Roth (edoroth@seas.upenn.edu)
+
+1) part1.txt contains security analysis of the provided fecklessauth.c program.
+
+2) part2.c contains a modified version of fecklessauth.c that fixes the holes ddiscussed in part1.
+
+For the remaining 3 parts, first run 'make'. This will create an executable '/a.out' for 'fecklessauth.c' (among other things necessary for the remaining scripts).
+
+3) run './part3.sh'. This will create an input (which will be stored in part3input.txt) and run it through the executable. Note that the username != the password.
+
+4) run './part4.sh'. This will create an input (which will be stored in part4input.txt) and run it through the executable, printing a "Coder is 0wned" message instead of the original welcome message.
+
+5) run './part5WithoutGdb.sh'. This will create an input (which will be stored in part5NoGdb.txt) and run it through the executable, allowing additional input from the user to control the shell.
+
+
